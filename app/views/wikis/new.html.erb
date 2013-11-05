@@ -1,0 +1,15 @@
+
+<%= form_for @wiki do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :text_area %>
+  <%= form.text_area :body, :size => "60x12" %>
+  <%= form.label :private %>
+  <%= form.check_box :private %>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+

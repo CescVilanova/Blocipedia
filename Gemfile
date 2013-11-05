@@ -13,6 +13,14 @@ group :development do
   gem 'sqlite3'
 end
 
+#Gems used for Bloccipedia features
+
+gem 'devise'
+
+gem "redcarpet", "~> 3.0.0"
+
+gem 'skeleton-rails'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

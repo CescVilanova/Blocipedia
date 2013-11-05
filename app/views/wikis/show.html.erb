@@ -1,0 +1,17 @@
+<h1><%= @wiki.name %></h1>
+
+<h4><%= @wiki.body %></h4>
+
+<p><% if @wiki.private == true %>
+  This is a private wiki.
+  <% else %>      
+  This is a public wiki.
+  <% end %> 
+</p>
+
+<div>
+  <%= link_to "Edit", new_wiki_path(@wiki) %>
+</div>
+<div>
+  <%= link_to "Delete", @wiki, method: :destroy, confirm: 'Are you sure you want to delete this topic?' %>
+</div>
