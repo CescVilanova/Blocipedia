@@ -14,3 +14,17 @@
  *= require skeleton
  *= require_tree .
  */
+
+.container {
+  top: 60px;
+  margin-left: 60px;
+}
+
+.flash {
+  color: green;
+}
+
+.user-info {
+  float: right;
+}
+
