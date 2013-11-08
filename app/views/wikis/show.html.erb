@@ -3,9 +3,9 @@
     <%= link_to "See all Wikis", wikis_path %>
   </div>
 
-  <h1><%= @wiki.name %></h1>
+  <h1><%= markdown @wiki.name %></h1>
 
-  <h4><%= @wiki.body %></h4>
+  <h4><%= markdown @wiki.body %></h4>
 
   <p><% if @wiki.private == true %>
     This is a private wiki.
