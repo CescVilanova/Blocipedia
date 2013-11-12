@@ -1,0 +1,7 @@
+  <div>
+    <%= link_to "See all collaborators of this wiki", collaborators_path %>
+  </div>
+
+  <h1><%= markdown @collaborator.name %></h1>
+
+  <h4><%= markdown @collaborator.email %></h4>

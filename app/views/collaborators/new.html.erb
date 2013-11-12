@@ -1,0 +1,12 @@
+
+<h1>Add Collaborator</h1>
+
+  <%= form_for @collaborator do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :email %>
+
+    <div>
+      <%= form.submit %>
+    </div>
+
+  <% end %>

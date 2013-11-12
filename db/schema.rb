@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131107232813) do
+ActiveRecord::Schema.define(:version => 20131112142213) do
+
+  create_table "collaborators", :force => true do |t|
+    t.boolean  "access"
+    t.integer  "wiki_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
