@@ -1,10 +1,10 @@
 Blocipedia::Application.routes.draw do
   
-  resources :collaborators
+  devise_for :users 
 
-  devise_for :users
-
-  resources :wikis
+  resources :wikis do
+    resources :collaborators
+  end 
 
   root to: 'welcome#index'
 

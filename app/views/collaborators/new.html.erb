@@ -1,12 +1,13 @@
 
 <h1>Add Collaborator</h1>
 
-  <%= form_for @collaborator do |form| %>
-    <%= form.label :name %>
-    <%= form.text_field :email %>
-
+  <%= form_for [@wiki, @collaborator] do |form| %>
+    <div>
+      <%= form.collection_select(:user_id, User.all, :id, :email) %>
+    </div>
+  
     <div>
       <%= form.submit %>
     </div>
 
-  <% end %>
+<% end %>

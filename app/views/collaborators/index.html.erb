@@ -1,0 +1,24 @@
+<h1>Collaborators</h1>
+
+  <div>
+    <%= link_to "See all Wikis", wikis_path %>
+  </div>
+
+  <hr>
+
+    <%@collaborators.each do |n|%>
+      <h3><%= markdown n.user.email%></h3>
+
+      <div class="two columns">
+        <%= link_to "Remove Collaborator", wiki_collaborators_path(@wiki, n), method: :delete, confirm: 'Are you sure you want to remove this collaborator from this wiki?' %>
+      </div>
+
+    <%end%>
+
+    <%= form_tag wiki_collaborators_path(@wiki) do %>
+      <%= text_field_tag(:email) %>
+      <%= submit_tag("Write email to invite as collaborator") %>
+    
+    <%end%>
+
+  <hr>
