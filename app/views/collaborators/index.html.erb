@@ -6,19 +6,22 @@
 
   <hr>
 
-    <%@collaborators.each do |n|%>
-      <h3><%= markdown n.user.email%></h3>
-
-      <div class="two columns">
-        <%= link_to "Remove Collaborator", wiki_collaborators_path(@wiki, n), method: :delete, confirm: 'Are you sure you want to remove this collaborator from this wiki?' %>
-      </div>
-
-    <%end%>
-
+  <ul>
     <%= form_tag wiki_collaborators_path(@wiki) do %>
-      <%= text_field_tag(:email) %>
-      <%= submit_tag("Write email to invite as collaborator") %>
-    
+      <%@users.each do |n|%>
+        <li>
+          <%= check_box_tag 'user_ids[]', n.id -%>
+          <%= n.email %>
+        </li>
+      <%end%>
+        <%= submit_tag(value = "Update collaborators for this Wiki") %>
     <%end%>
+  </ul>
 
   <hr>
+
+
+
+
+
+

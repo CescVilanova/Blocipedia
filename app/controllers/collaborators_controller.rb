@@ -2,18 +2,13 @@ class CollaboratorsController < ApplicationController
 
   def index
     @wiki = Wiki.find(params[:wiki_id])
-    @collaborators = @wiki.collaborators
+    @users = User.all
   end
 
   def create
-    @collaborator = Collaborator.new(params[:collaborator])
-    if @collaborator.save
-      flash[:notice] = "Invitations was sent successfully."
-      render :collaborators
-    else 
-      flash[:notice] = "There was an error sending the invitation."
-      rende :collaborators
-    end
+    @wiki = Wiki.find(params[:wiki_id])
+    @wiki.user_ids = params[:user_ids]
+    redirect_to wiki_path(@wiki)
   end
 
   def destroy
