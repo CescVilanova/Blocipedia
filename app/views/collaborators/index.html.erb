@@ -10,7 +10,7 @@
     <%= form_tag wiki_collaborators_path(@wiki) do %>
       <%@users.each do |n|%>
         <li>
-          <%= check_box_tag 'user_ids[]', n.id -%>
+          <%= check_box_tag 'user_ids[]', n.id, @wiki.users.include?(n) -%>
           <%= n.email %>
         </li>
       <%end%>
